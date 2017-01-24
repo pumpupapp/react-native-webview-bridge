@@ -129,11 +129,7 @@ public class WebViewBridgeManager extends ReactWebViewManager {
     }
 
     static private void evaluateJavascript(WebView root, String javascript) {
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
-            root.evaluateJavascript(javascript, null);
-        } else {
-            root.loadUrl("javascript:" + javascript);
-        }
+        root.loadUrl("javascript:(function() {\n" + javascript + ";\n})();");
     }
 
     @ReactProp(name = "injectedJavaScript")
