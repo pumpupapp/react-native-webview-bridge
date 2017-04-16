@@ -60,9 +60,7 @@
   function onInvoke(payload) {
     var invoker = invokers[payload.name]
     if (invoker) {
-      setTimeout(function () {
-        invoker(payload.id, payload.args)
-      }, 15)
+      invoker(payload.id, payload.args)
     }
   }
 
@@ -71,9 +69,7 @@
     if (target) {
       clearTimeout(target.timeoutHandler)
       delete responseCallbacks[id]
-      setTimeout(function () {
-        target.callback(null, result)
-      }, 15)
+      target.callback(null, result)
     }
   }
 
@@ -82,9 +78,7 @@
     if (target) {
       clearTimeout(target.timeoutHandler)
       delete responseCallbacks[id]
-      setTimeout(function () {
-        target.callback(result, null)
-      }, 15)
+      target.callback(result, null)
     }
   }
 
