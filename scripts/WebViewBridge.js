@@ -68,7 +68,7 @@
 
     setTimeout(function () {
       window.document.dispatchEvent(event)
-    }, 15)
+    }, 0)
   }
 
   WebViewBridge.__dispatch__ = dispatch
@@ -82,7 +82,7 @@
         fn = onMessageListeners[onMessage]
         fn(decoded)
       })
-    }, 15)
+    }, 0)
   }
   WebViewBridge.__fetch__ = function () {
     var val = JSON.stringify(queue)
@@ -91,7 +91,7 @@
   }
   WebViewBridge.send = function (input) {
     queue.push(encode(input))
-    setTimeout(signalNative, 15)
+    setTimeout(signalNative, 0)
   }
   WebViewBridge.addMessageListener = function(fn) {
     onMessageListeners[fn] = fn
