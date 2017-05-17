@@ -1,6 +1,7 @@
 package com.github.alinz.reactnativewebviewbridge;
 
 import android.content.Context;
+import android.os.Build;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.WebView;
 
